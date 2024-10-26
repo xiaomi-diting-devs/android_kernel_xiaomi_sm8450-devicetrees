@@ -33,6 +33,7 @@
 		pinctrl-names = "pmx_ts_active", "pmx_ts_suspend";
 		pinctrl-0 = <&mi_ts_active>;
 		pinctrl-1 = <&ts_int_suspend &ts_reset_suspend>;
+		vdd-supply = <&L2C>;
 
 		goodix,reset-gpio = <&tlmm 20 GPIO_ACTIVE_HIGH>;
 		goodix,irq-gpio = <&tlmm 21 GPIO_TRANSITORY>;
@@ -46,15 +47,11 @@
 		// goodix,avdd-name = "avdd";
 		// avdd-supply = <&L7C>;
 		goodix,iovdd-name = "vdd";
-		vdd-supply = <&L2C>;
-		goodix,panel-id-gpio-a = <&tlmm 119 GPIO_ACTIVE_LOW>;
-		goodix,panel-id-gpio-b = <&tlmm 117 GPIO_ACTIVE_LOW>;
-		goodix,firmware-namea = "goodix_firmware_l12.bin";
-		goodix,config-namea = "goodix_cfg_group_l12.bin";
+		goodix,firmware-name = "goodix_firmware_l12.bin";
+		goodix,config-name = "goodix_cfg_group_l12.bin";
 
 		fts,avdd-gpio = <&tlmm 71 GPIO_ACTIVE_HIGH>;
 		//avdd-supply = <&L3C>;
-		//vdd-supply = <&L2C>;
 		//fts,pwr-reg-name = "avdd";
 		fts,bus-reg-name = "vdd";
 		fts,irq-gpio = <&tlmm 21 GPIO_TRANSITORY>;
